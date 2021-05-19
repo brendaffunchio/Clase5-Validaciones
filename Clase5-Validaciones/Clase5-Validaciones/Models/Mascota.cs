@@ -10,10 +10,10 @@ namespace Clase5_Validaciones.Models
     public class Mascota
     {
         public int Id { get; set; }
-        [Required(ErrorMessage ="Campo requerido")]
+        [Required(ErrorMessage = "Campo requerido")]
         public Especie Especie { get; set; }
 
-        [Required(ErrorMessage ="Campo requerido")]
+        [Required(ErrorMessage = "Campo requerido")]
         [CustomCaracteresEspeciales(ErrorMessage = "El texto no debe contener caracteres especiales")]
         public string Estado { get; set; }
 
@@ -21,7 +21,7 @@ namespace Clase5_Validaciones.Models
         public int? Peso { get; set; }
         public string Color { get; set; }
 
-        [StringLength(200, ErrorMessage ="No se puede ingresar mas de 200 caracteres")]
+        [StringLength(200, ErrorMessage = "No se puede ingresar mas de 200 caracteres")]
         [CustomCaracteresEspeciales(ErrorMessage = "El texto no debe contener caracteres especiales")]
         public string Nombre { get; set; }
 
@@ -36,6 +36,7 @@ namespace Clase5_Validaciones.Models
         {
             Fotos = new List<string>();
         }
+    }
 
         public class CustomCaracteresEspeciales : ValidationAttribute
         {
@@ -49,5 +50,5 @@ namespace Clase5_Validaciones.Models
 
             }
         }
-    }
+    
 }
